@@ -46,7 +46,7 @@ optional; CPU inference takes a few seconds per scan.
 
 | file | model | training | test CL_WC MAE | notes |
 |---|---|---|---|---|
-| `resnet_transformer_hybrid_seed8.pt` | `resnet_transformer_hybrid` | default protocol; seed selected by **validation** CL_WC MAE (best of 10) | 4.35 CL | canonical released checkpoint |
+| `resnet_transformer_hybrid.pt` | `resnet_transformer_hybrid` | default protocol; seed selected by **validation** CL_WC MAE (best of 10) | 4.35 CL | canonical released checkpoint |
 
 Across all 10 seeds the test CL_WC MAE is **4.32 ± 0.10**; the released seed was
 chosen on the validation split only, so its test number is an unbiased estimate.
