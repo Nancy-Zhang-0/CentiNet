@@ -1,15 +1,10 @@
 # CentiNet: one-step Centiloid quantification from native-space amyloid PET
 
-End-to-end deep learning that maps a **native-space** 18F-florbetapir /
-18F-florbetaben PET volume directly to continuous Centiloid (CL) values, with
-no MRI, no spatial normalization and no reference-region masking anywhere in
-the input path. One shared encoder regresses three targets jointly, namely
-`CL_pons`, `CL_WC` (whole cerebellum) and `CL_WCB` (whole cerebellum +
-brainstem). `CL_WC` is the primary target for model selection.
+End-to-end deep learning that maps a **native-space** 18F-florbetapir PET volume directly to continuous Centiloid (CL) values, with no MRI, no spatial normalization and no reference-region masking anywhere in the input path. 
 
-Ground-truth Centiloid values come from an in-house FreeSurfer-based
-replication of the ADNI Berkeley PET pipeline. The code, the released weights
-and the inference script are provided for research use only.
+One shared encoder regresses three targets jointly, namely `CL_pons`, `CL_WC` (whole cerebellum) and `CL_WCB` (whole cerebellum + brainstem). `CL_WC` is the primary target for model selection.
+
+Ground-truth Centiloid values come from an in-house NOS_PETquan pipeline (developed based on GAAIN). The code, the released weights and the inference script are provided for research use only.
 
 > **Paper:** manuscript in preparation — citation will be added on publication ·
 > **Weights:** see [Pretrained weights](#pretrained-weights)
