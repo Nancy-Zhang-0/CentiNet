@@ -57,10 +57,6 @@ parameters and the train-split target statistics needed to convert network
 outputs back to Centiloid. `weights/target_stats.json` holds the same
 statistics for reference.
 
-The weights were trained on ADNI data only. Performance on other cohorts,
-scanners, tracers or reconstruction settings has not been validated, and the
-model is not a medical device.
-
 To package your own run the same way:
 
 ```bash
@@ -99,9 +95,7 @@ are used as targets.
 
 ADNI data cannot be redistributed. Apply at
 <https://adni.loni.usc.edu/data-samples/access-data/>. The label CSVs were
-produced by our in-house Centiloid pipeline; the same values can be
-regenerated with any Centiloid-calibrated pipeline, but numbers will differ
-slightly from ADNI's official UC Berkeley values.
+produced by our in-house Centiloid pipeline.
 
 ## Reproducing the paper
 
@@ -170,10 +164,6 @@ python scripts/08_gradcam_map.py   --run_dir runs/<run>          # Grad-CAM on C
 python scripts/15_optuna_search.py --n_trials 24                 # HPO on validation MAE only
 ```
 
-All reported metrics are computed on raw model outputs; the only transform is
-un-standardisation with fixed train-split statistics. Script 13 adds a
-post-hoc calibration row for comparison only. The aggregated result tables
-from the paper will be reported in the manuscript.
 
 ## Models
 
