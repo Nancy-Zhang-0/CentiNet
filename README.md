@@ -30,7 +30,7 @@ and the inference script are provided for research use only.
 
 ```bash
 pip install -r requirements.txt
-python predict.py --ckpt weights/resnet_transformer_hybrid_seed0.pt \
+python predict.py --ckpt weights/resnet_transformer_hybrid.pt \
     /path/to/AMY_AV45_PET.nii --out predictions.csv
 ```
 
