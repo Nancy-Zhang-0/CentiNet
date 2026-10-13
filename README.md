@@ -1,4 +1,4 @@
-# Deep-Amyloid: native-space amyloid PET → continuous Centiloid
+# CentiNet: one-step Centiloid quantification from native-space amyloid PET
 
 End-to-end deep learning that maps a **native-space** 18F-florbetapir /
 18F-florbetaben PET volume directly to continuous Centiloid (CL) values, with
@@ -54,7 +54,8 @@ Every checkpoint ships with a `.json` sidecar (architecture, preprocessing
 parameters, target statistics, SHA-256).
 
 Weights are **not** stored in git. Download them from the GitHub release
-page (or Zenodo DOI, _[add link]_) into `weights/`, then verify the SHA-256
+page (<https://github.com/Nancy-Zhang-0/CentiNet/releases/latest>) into
+`weights/`, then verify the SHA-256
 listed in the `.json` sidecar next to each file. Each release checkpoint is
 self-contained: it carries the model name and kwargs, the preprocessing
 parameters and the train-split target statistics needed to convert network
