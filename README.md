@@ -177,7 +177,7 @@ python scripts/15_optuna_search.py --n_trials 24                 # HPO on valida
 All reported metrics are computed on raw model outputs; the only transform is
 un-standardisation with fixed train-split statistics. Script 13 adds a
 post-hoc calibration row for comparison only. The aggregated result tables
-from the paper are in [`results/`](results/).
+from the paper will be reported in the manuscript.
 
 ## Models
 
@@ -223,7 +223,6 @@ predict.py                inference on new NIfTI volumes
 tools/export_checkpoint.py  package a run into a release checkpoint
 tests/                    pytest unit tests
 weights/                  release checkpoints (downloaded) + target_stats.json
-results/                  aggregated result tables from the paper
 docs/                     split summary
 ```
 
