@@ -1,0 +1,18 @@
+characteristic,train,val,test,all
+"Subjects, n",656,92,185,933
+"Scans, n",1612,222,455,2289
+"Scans per subject, median (range)",2 (1-7),2 (1-6),2 (1-8),2 (1-8)
+"Tracer, FBP / FBB scans",1589 / 23,222 / 0,451 / 4,2262 / 27
+"Sex, female n (%)",312 (48%),43 (47%),97 (52%),452 (48%)
+"Baseline age, mean ± SD",74.7 ± 7.4,74.5 ± 7.0,74.2 ± 7.6,74.6 ± 7.4
+"Diagnosis CN, n (%)",244 (37%),31 (34%),69 (37%),344 (37%)
+"Diagnosis MCI, n (%)",325 (50%),51 (55%),96 (52%),472 (51%)
+"Diagnosis AD, n (%)",87 (13%),10 (11%),20 (11%),117 (13%)
+"CL_WC (scans), mean ± SD",38.7 ± 44.0,40.8 ± 42.0,34.0 ± 42.1,38.0 ± 43.5
+"CL_WC (scans), median [range]","21.9 [-15.0, 201.0]","28.9 [-14.3, 157.8]","15.2 [-15.4, 156.1]","20.8 [-15.4, 201.0]"
+"Amyloid-positive scans (CL_WC >= 20), n (%)",830 (51%),123 (55%),208 (46%),1161 (51%)
+"Baseline CL_WC <0, subjects n",130,18,37,185
+"Baseline CL_WC 0-20, subjects n",161,22,45,228
+"Baseline CL_WC 20-40, subjects n",70,10,20,100
+"Baseline CL_WC 40-100, subjects n",203,29,57,289
+"Baseline CL_WC >100, subjects n",92,13,26,131

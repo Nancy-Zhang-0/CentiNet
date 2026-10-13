@@ -1,0 +1,83 @@
+# Deep-Amyloid: native-space amyloid PET -> continuous Centiloid (3 targets)
+# All paths are relative to the project root unless absolute.
+
+paths:
+  # Root of the processed ADNI tree (see README "Data layout"). Override on the
+  # CLI with --set paths.pet_root=/your/path or edit here.
+  pet_root: /path/to/ADNI_PET+T1/PET_T1
+  # ADNI subject table (columns Subject, Sex, Age, Group) used only for Table 1
+  # and stratified analyses; leave empty to skip demographics.
+  group_csv: ""
+  # Optional scan-level outlier list with columns ID, SCANDATE, Tier; flagged
+  # scans are excluded from train/val/test. Leave empty to apply no list.
+  # (The list used in the paper is derived from ADNI data and is not
+  # redistributed; see README "Reproducing the paper cohort".)
+  outlier_csv: ""
+  pet_files_csv: data/pet_files.csv
+  labels_csv: data/labels.csv
+  manifest_csv: data/manifest.csv
+  dropped_csv: data/dropped_scans.csv
+  split_summary: data/split_summary.md
+  cache_dir: data/cache
+  qc_png_dir: data/qc_png
+  target_stats: data/target_stats.json
+  runs_dir: runs
+
+columns:
+  subject_id: subject_id
+  scan_id: scan_id
+  scan_date: scan_date
+  tracer: tracer
+  pet_path: pet_path
+  targets: [CL_pons, CL_WC, CL_WCB]
+  primary_target: CL_WC
+  site: site
+
+cohort:
+  # folder prefix in PET_T1 -> (tracer label, pipeline output name)
+  tracers:
+    AV45: FBP
+    FBB: FBB
+
+qc:
+  fg_threshold_frac: 0.10      # foreground = voxel > frac * p99
+  min_slice_voxels: 10         # a slice counts as foreground if >= this many fg voxels
+  fov_flag_quantile: 0.05      # flag lowest 5% of inferior_coverage_mm
+
+split:
+  seed: 42
+  ratios: [0.70, 0.10, 0.20]   # train / val / test, by subject count
+  cl_wc_bins: [-.inf, 0, 20, 40, 100, .inf]
+
+preprocess:
+  voxel_size: 2.0
+  crop_size: 96
+  norm_percentile: 95          # divide by p95 of foreground voxels (same volume only)
+  fg_threshold_frac: 0.10
+  n_qc_png: 20
+  n_workers: 12
+
+augment:
+  rotate_deg: 15.0
+  translate_vox: 8
+  scale_range: [0.9, 1.1]
+  flip_prob: 0.5
+  intensity_scale: [0.5, 2.0]
+  noise_std: 0.02
+
+train:
+  model: resnet3d_18
+  seed: 0
+  batch_size: 8
+  epochs: 100
+  lr: null                     # null = auto (1e-4; 5e-5 for vit3d_small / swinunetr_encoder)
+  weight_decay: 0.05
+  warmup_epochs: 5
+  patience: 15                 # early stopping on val MAE of CL_WC (original units)
+  huber_delta: 1.0             # SmoothL1 beta, in standardized units
+  dropout: 0.2
+  amp: true
+  num_workers: 8
+  pretrained_path: null
+  wandb: false
+  wandb_project: deep-amyloid

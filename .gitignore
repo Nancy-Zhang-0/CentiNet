@@ -1,0 +1,28 @@
+# ADNI-derived data: never commit (Data Use Agreement)
+data/
+runs/
+runs_optuna/
+results/optuna_study.db
+results/optuna_trials.csv
+*.nii
+*.nii.gz
+*.npy
+
+# model weights live on the release page / Zenodo, not in git
+*.pt
+*.pth
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# tooling
+.vscode/
+.idea/
+wandb/
+*.log
+.DS_Store

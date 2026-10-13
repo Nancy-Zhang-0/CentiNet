@@ -1,0 +1,14 @@
+# Python 3.11 (conda env: deep-amyloid)
+torch==2.5.1
+monai==1.4.0
+nibabel==5.3.2
+pandas==2.2.3
+scikit-learn==1.5.2
+matplotlib==3.9.2
+pyyaml==6.0.2
+scipy==1.14.1
+pytest==8.3.4
+einops==0.8.0  # required by MONAI SwinUNETR
+# optional experiment tracking
+# wandb
+optuna==4.1.0  # HPO (phase 2)

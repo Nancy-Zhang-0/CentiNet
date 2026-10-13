@@ -1,0 +1,40 @@
+{
+  "format": 1,
+  "model_name": "resnet_transformer_hybrid",
+  "model_kwargs": {},
+  "dropout": 0.2,
+  "targets": [
+    "CL_pons",
+    "CL_WC",
+    "CL_WCB"
+  ],
+  "primary_target": "CL_WC",
+  "target_stats": {
+    "CL_pons": {
+      "mean": 27.75605541090482,
+      "std": 44.83598154108191
+    },
+    "CL_WC": {
+      "mean": 38.68499586586054,
+      "std": 44.033695903290926
+    },
+    "CL_WCB": {
+      "mean": 37.315526591383716,
+      "std": 42.47515961407402
+    }
+  },
+  "preprocess": {
+    "voxel_size": 2.0,
+    "crop_size": 96,
+    "fg_threshold_frac": 0.1,
+    "norm_percentile": 95
+  },
+  "source_run": "resnet_transformer_hybrid_8_20260913-222419",
+  "epoch": 90,
+  "val_mae": {
+    "CL_pons": 4.497642517089844,
+    "CL_WC": 3.9002654552459717,
+    "CL_WCB": 3.5285871028900146
+  },
+  "sha256": "7f3e2cf147dffc974e468c356805df889cfc5e6a28b9360a7351bf7c2611e37b"
+}
