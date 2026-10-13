@@ -5,7 +5,7 @@
 
 ## train
 - subjects: 656, scans: 1612 (held out: 63 QC-flagged, 49 outlier-flagged)
-- tracer: {'FBB': 23, 'FBP': 1589}
+- tracer: {'FBP': 1589}
 - CL_WC: mean 38.7, sd 44.0, median 21.9, range [-15.0, 201.0]
 - CL_WC bins: {Interval(-inf, 0.0, closed='right'): 347, Interval(0.0, 20.0, closed='right'): 435, Interval(20.0, 40.0, closed='right'): 185, Interval(40.0, 100.0, closed='right'): 458, Interval(100.0, inf, closed='right'): 187}
 
@@ -17,7 +17,7 @@
 
 ## test
 - subjects: 185, scans: 455 (held out: 14 QC-flagged, 19 outlier-flagged)
-- tracer: {'FBB': 4, 'FBP': 451}
+- tracer: {'FBP': 451}
 - CL_WC: mean 34.0, sd 42.1, median 15.2, range [-15.4, 156.1]
 - CL_WC bins: {Interval(-inf, 0.0, closed='right'): 116, Interval(0.0, 20.0, closed='right'): 131, Interval(20.0, 40.0, closed='right'): 42, Interval(40.0, 100.0, closed='right'): 120, Interval(100.0, inf, closed='right'): 46}
 
