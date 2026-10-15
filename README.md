@@ -8,6 +8,7 @@ Ground-truth Centiloid values come from an in-house NOS_PETquan pipeline (develo
 
 > **Paper:** manuscript in preparation — citation will be added on publication ·
 > **Weights:** see [Pretrained weights](#pretrained-weights)
+> ![Overview](CentiNet.png)
 
 ## Contents
 
